@@ -6,4 +6,5 @@ Code for element14 road test project https://www.element14.com/community/roadTes
 * make all
  
 ## How to run:
+* Update tokens.json with your own tokens. Please read the link above regrading how to get your own tokens.
 * python3 ecobeeAirQualityControl.py
