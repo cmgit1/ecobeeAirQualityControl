@@ -56,16 +56,17 @@ def controlThermostat(tokens, controlJsonFileName):
     return True
 
 def ecobeeControl(iaq: float, iaq_accuracy: int):
-    print(f'IAQ {iaq:.0f}, IAQ Accuracy {iaq_accuracy:d}')
-
+    while (updateAccessToken(myTokens) == False):
+        time.sleep(1)
+    if iaq > 100.0 :
+        while (controlThermostat(myTokens, "setHoldFanOn.json") == False):
+            time.sleep(1)
+        return
+    if iaq < 50.0 :
+        while (controlThermostat(myTokens, "resumeProgram.json") == False):
+            time.sleep(1)
+        return
 
 myTokens = readJsonDataFromFile(tokenFileName)
-while (updateAccessToken(myTokens) == False):
-    time.sleep(5)
-while (controlThermostat(myTokens, "setHoldFanOn.json") == False):
-    time.sleep(5)
-time.sleep(60)
-while (controlThermostat(myTokens, "resumeProgram.json") == False):
-    time.sleep(5)
 
 AirQualityReader.run(ecobeeControl)
