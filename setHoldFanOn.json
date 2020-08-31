@@ -1,0 +1,17 @@
+{
+    "selection": {
+      "selectionType":"registered",
+      "selectionMatch":""
+    },
+    "functions": [
+      {
+        "type":"setHold",
+        "params":{
+          "holdType":"indefinite",
+          "heatHoldTemp":450,
+          "coolHoldTemp":950,
+          "fan": "on"
+        }
+      }
+    ]
+  } 

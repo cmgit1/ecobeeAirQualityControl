@@ -1,0 +1,14 @@
+{
+    "selection": {
+      "selectionType":"registered",
+      "selectionMatch":""
+    },
+    "functions": [
+      {
+        "type":"resumeProgram",
+        "params":{
+          "resumeAll":false
+        }      
+      }
+    ]
+  }
